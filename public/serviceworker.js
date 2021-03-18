@@ -23,14 +23,13 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// The activate handler takes care of cleaning up old caches.
+// using 'activate' to clean old chaches before returning an array of iteams to be deleted.
 self.addEventListener("activate", (event) => {
   const currentCaches = [STATIC_CACHE, RUNTIME_CACHE];
   event.waitUntil(
     caches
       .keys()
       .then((cacheNames) => {
-        // return array of cache names that are old to delete
         return cacheNames.filter(
           (cacheName) => !currentCaches.includes(cacheName)
         );
@@ -45,9 +44,8 @@ self.addEventListener("activate", (event) => {
       .then(() => self.clients.claim())
   );
 });
-
+//checks if connected and stores all non 'GET' requests if offline
 self.addEventListener("fetch", (event) => {
-  // non GET requests are not cached and requests to other origins are not cached
   if (
     event.request.method !== "GET" ||
     !event.request.url.startsWith(self.location.origin)
@@ -55,10 +53,7 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(fetch(event.request));
     return;
   }
-
-  // handle runtime GET requests for data from /api routes
   if (event.request.url.includes("/api/")) {
-    // make network request and fallback to cache if network request fails (offline)
     event.respondWith(
       caches.open(RUNTIME_CACHE).then((cache) => {
         return fetch(event.request)
