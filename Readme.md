@@ -1,39 +1,48 @@
+# BudgetTracker
 
-  # BudgetTracker
+![alt text](imgs/budget.png)
 
-  # Table of Contents
-  * [Author](##Author)
-  * [Project Description](##Description)
-  * [Install](##Install)
-  * [Usage](##Usage)
-  * [Testing](##Testing)
-  * [License](##License)
-  * [Contributors](##Contributors)
-  * [Questions](##Questions)
-   
-  
-  ## Author 
-  Name: Jack Murphy 
-  GitHub: jmurphy0
+# Table of Contents
 
-  ## Description 
-  Keeps track of your money, regadless of your internet connection. 
+- [Author](##Author)
+- [Project Description](##Description)
+- [Install](##Install)
+- [Usage](##Usage)
+- [Testing](##Testing)
+- [License](##License)
+- [Contributors](##Contributors)
+- [Questions](##Questions)
 
-  ## Install 
-  N/A 
+## Author
 
-  ## Usage 
-  Use in chrome from heroku
+Name: Jack Murphy
+GitHub: jmurphy0
 
-  ## Testing 
-  N/A
+## Description
 
-  ## License 
-  License:   ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)  
-  License link: https://opensource.org/licenses/MIT
+Keeps track of your money, regadless of your internet connection.
 
-  ## Contributors 
-  dont
+## Install
 
-  ## Questions 
-  N/A
+N/A
+
+## Usage
+
+Use in chrome from heroku
+
+## Testing
+
+N/A
+
+## License
+
+License: ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)  
+ License link: https://opensource.org/licenses/MIT
+
+## Contributors
+
+dont
+
+## Questions
+
+N/A
