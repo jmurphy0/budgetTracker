@@ -1,6 +1,8 @@
 # BudgetTracker
 
 ![alt text](imgs/budget.png)
+Github: https://github.com/jmurphy0/budgetTracker.git
+Heroku: https://murphybudget.herokuapp.com
 
 # Table of Contents
 
