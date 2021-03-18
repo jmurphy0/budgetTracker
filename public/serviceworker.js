@@ -7,6 +7,8 @@ const FILES_TO_CACHE = [
   "/manifest.json",
   "/styles.css",
   "/index.js",
+  "/db.json",
+  "/db.js",
 ];
 
 const STATIC_CACHE = "static-cache";
