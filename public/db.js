@@ -20,24 +20,17 @@ request.onsuccess = function (event) {
 request.onerror = function (event) {
   console.log("Woops! " + event.target.errorCode);
 };
-
+// create a transaction on the pending db with readwrite access then get pending object store before adding record to store
 function saveRecord(record) {
-  // create a transaction on the pending db with readwrite access
   const transaction = db.transaction(["pending"], "readwrite");
-
-  // access your pending object store
   const store = transaction.objectStore("pending");
-
-  // add record to your store with add method.
   store.add(record);
 }
 
+//open transaction pending then accesses the object before getting all transactions and posting to the page then if possible saving iteam to db.
 function checkDatabase() {
-  // open a transaction on your pending db
   const transaction = db.transaction(["pending"], "readwrite");
-  // access your pending object store
   const store = transaction.objectStore("pending");
-  // get all records from store and set to a variable
   const getAll = store.getAll();
 
   getAll.onsuccess = function () {
@@ -52,18 +45,13 @@ function checkDatabase() {
       })
         .then((response) => response.json())
         .then(() => {
-          // if successful, open a transaction on your pending db
           const transaction = db.transaction(["pending"], "readwrite");
-
-          // access your pending object store
           const store = transaction.objectStore("pending");
-
-          // clear all items in your store
           store.clear();
         });
     }
   };
 }
 
-// listen for app coming back online
+// listener for when internet connection is once again established.
 window.addEventListener("online", checkDatabase);
