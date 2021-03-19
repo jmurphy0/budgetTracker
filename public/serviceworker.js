@@ -1,14 +1,12 @@
 // start serviceworker and cache all files of app content
 const FILES_TO_CACHE = [
-  "/",
-  "index.html",
+  "/index.html",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
-  "/manifest.json",
   "/styles.css",
   "/index.js",
-  "/db.json",
   "/db.js",
+  "/",
 ];
 
 const STATIC_CACHE = "static-cache";
